@@ -83,6 +83,7 @@ function App() {
       <Input 
         setInputText={changeInputTextValue}
         addNewToDo={addNewToDo}
+        inputText={inputText}
       />
       <ShowAllButtons 
         setShowButtons={setShowButtons}
