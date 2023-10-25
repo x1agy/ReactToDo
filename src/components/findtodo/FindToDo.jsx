@@ -3,7 +3,7 @@ import React from "react";
 function FindToDo( {setFilterWord} ){
 
     function newInputWord(e){
-        setFilterWord(e.target.value)
+        setFilterWord(e.target.value.toLowerCase())
     }
 
     return(

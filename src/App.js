@@ -63,7 +63,7 @@ function App() {
         else return false
       }
       else {
-          if(item.body.indexOf(filterWord) !== -1){
+          if(item.body.toLowerCase().indexOf(filterWord) !== -1){
           return true
         }
       }
