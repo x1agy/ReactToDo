@@ -4,6 +4,7 @@ import ShowToDo from "./components/showtodos/ShowToDo"
 import Input from "./components/inputtext/InputText";
 import FindToDo from "./components/findtodo/FindToDo";
 import ShowAllButtons from "./components/buttons/ShowAllButtons";
+import "./style.css"
 
 function App() {
   const [allToDos, setAllToDos] = useState([]);
@@ -17,11 +18,19 @@ function App() {
   }
 
   function addNewToDo() {
-    setAllToDos([...allToDos, {
-      body: inputText,
-      isCompleted: false,
-      id: Math.random()
-    }]);
+    if(inputText.length > 46){
+      alert("Превышено допустимое количество символов")
+    }else if(inputText.length < 1){
+      alert("Напишите что нибудь")
+    }else if(allToDos.find(item => item.body === inputText)){
+      alert("Такое значение уже существует")
+    }else{
+      setAllToDos([{
+        body: inputText,
+        isCompleted: false,
+        id: Math.random()
+      }, ...allToDos]);
+    }
   }
 
   function completeTask(id) {
@@ -64,11 +73,13 @@ function App() {
   }, [filterWord, allToDos, showButtonsValue]);
 
   return (
-    <div className="App" key={"sdfsd"}>
-      <Header />
-      <FindToDo 
-        setFilterWord={setFilterWord}
-      />
+    <div className="App">
+      <header>
+        <Header />
+        <FindToDo 
+          setFilterWord={setFilterWord}
+        />
+      </header>
       <Input 
         setInputText={changeInputTextValue}
         addNewToDo={addNewToDo}

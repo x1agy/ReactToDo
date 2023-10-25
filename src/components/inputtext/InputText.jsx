@@ -8,13 +8,14 @@ function Input({setInputText, addNewToDo}){
     function makeNewToDo(e){
         e.preventDefault();
         addNewToDo()
+        e.target.value = null;
     }
     return(
-        <form action="" onSubmit={makeNewToDo}>
-            <input type="text"
+        <form action="" className="inputForm" onSubmit={makeNewToDo}>
+            <input className="mainInput" type="text"
             onChange={changeValue}
             />
-            <input type="submit"/>
+            <input className="mainInputButton" type="submit" value="Make new task"/>
         </form>
     );
 }

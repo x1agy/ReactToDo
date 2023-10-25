@@ -7,7 +7,7 @@ function FindToDo( {setFilterWord} ){
     }
 
     return(
-        <input type="text" onChange={newInputWord} />
+        <input type="text" placeholder="Find your task" onChange={newInputWord} />
     )
 }
 export default FindToDo

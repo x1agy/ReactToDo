@@ -6,7 +6,7 @@ import ShowUncompleted from "./allButtons/ShowUncompleted";
 function ShowAllButtons( {setShowButtons} ){
 
     return(
-        <div>
+        <div className="allButtons">
             <ShowAll 
                 setShowButtons={setShowButtons}
             />
