@@ -3,7 +3,10 @@ import React from "react";
 function Input({setInputText, addNewToDo, inputText}){
 
     function changeValue(e){
-        setInputText(e.target.value)
+        if(e.target.value.length < 38){
+            setInputText(e.target.value)
+        }
+        
     }
     function makeNewToDo(e){
         e.preventDefault();

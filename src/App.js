@@ -18,9 +18,7 @@ function App() {
   }
 
   function addNewToDo() {
-    if(inputText.length > 46){
-      alert("Превышено допустимое количество символов")
-    }else if(inputText.length < 1){
+    if(inputText.length < 1){
       alert("Напишите что нибудь")
     }else if(allToDos.find(item => item.body === inputText)){
       alert("Такое значение уже существует")
